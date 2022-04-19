@@ -14,9 +14,15 @@
 .btn-blue {
   color: white !important;
   background-color: #154a9d;
+  border: 2px solid white;
   border-radius: 7px;
   font-size: 16px;
   transition: 0.3s;
+}
+.btn-blue:hover {
+  color: #154a9d !important;
+  background-color: white;
+  border: 2px solid #154a9d;
 }
 .btn-white {
   color: #154a9d !important;
@@ -71,15 +77,37 @@
 
 .btn-blue-circle {
   position: absolute;
-  bottom: 5%;
+  bottom: 1%;
   left: 0;
   right: 0;
   margin: 0 auto;
   z-index: 5;
-  height: 60px;
-  width: 60px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
   background-color: rgba(25, 82, 168, 0.4);
+}
+
+@media (min-width: 567px) {
+  .btn-blue-circle {
+    height: 40px;
+    width: 40px;
+    bottom: 1%;
+  }
+}
+@media (min-width: 768px) {
+  .btn-blue-circle {
+    height: 50px;
+    width: 50px;
+    bottom: 2%;
+  }
+}
+@media (min-width: 992px) {
+  .btn-blue-circle {
+    height: 60px;
+    width: 60px;
+    bottom: 3%;
+  }
 }
 
 /* ------------------------------------------------------------------------------------------------------ */
@@ -108,8 +136,8 @@
   z-index: 5;
 }
 .info .image {
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
   border-radius: 12px;
   background-color: white;
   margin: 0 auto;
@@ -120,13 +148,41 @@
   height: 100%;
   object-fit: cover;
 }
+.info h1 {
+  padding-top: 80px;
+}
+.info h2 {
+  font-size: 18px;
+}
+@media (min-width: 768px) {
+  .info h2 {
+    font-size: 22px;
+  }
+  .info .image {
+    height: 200px;
+    width: 200px;
+  }
+}
+@media (min-width: 992px) {
+  .info h1 {
+    padding-top: 0px;
+  }
+  .info h2 {
+    font-size: 24px;
+  }
+  .info .image {
+    height: 250px;
+    width: 250px;
+  }
+}
 @media (min-width: 1200px) {
   .info {
     min-height: 950px;
     padding: 70px 0px;
   }
-  .info h2 {
+  .info h1 {
     width: 70%;
+    margin-top: 0px;
   }
   .info p.lead {
     letter-spacing: 0.05em;
@@ -153,8 +209,8 @@
 .step .line-step .lingkaran {
   position: absolute;
   top: 0;
-  height: 30px;
-  width: 30px;
+  height: 27px;
+  width: 27px;
   background-color: #154a9d;
   border-radius: 50%;
 }
@@ -185,10 +241,17 @@
   font-family: "DM Sans", sans-serif;
 }
 .syarat .image {
-  height: 500px;
-  width: 300px;
+  height: 300px;
+  width: 200px;
   margin: 0 auto;
   position: relative;
+  margin-bottom: 40px;
+}
+@media (min-width: 992px) {
+  .syarat .image {
+    height: 500px;
+    width: 300px;
+  }
 }
 .syarat .image::after {
   content: "";
@@ -241,4 +304,80 @@
   right: 0;
   background-color: rgba(0, 43, 107, 0.8);
   z-index: 1;
+}
+
+/* --------------------------------------------------------------------------------------- */
+
+.faq {
+  position: relative;
+  font-family: "DM Sans", sans-serif;
+  padding: 120px 0px;
+}
+
+.faq .accordion-item {
+  margin-bottom: 30px;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1px solid #434343;
+  padding: 10px 0px;
+}
+.faq .accordion-item button {
+  box-shadow: none;
+  background-color: white;
+  border: none;
+  color: #434343;
+  font-weight: 700;
+  font-size: 20px;
+}
+.accordion-button::after {
+  background-color: #434343;
+  background-image: url("assets/img/chevron-down.png") !important;
+  background-size: 50%;
+  background-position: center;
+  padding: 3px !important;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+.join {
+  position: relative;
+  font-family: "DM Sans", sans-serif;
+  padding: 120px;
+  background-color: white;
+}
+.join::after {
+  content: "";
+  position: absolute;
+  top: 95%;
+  left: 0;
+  right: 0;
+  height: 80px;
+  border-radius: 0px 0px 40px 40px;
+  background-color: white;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* footer */
+
+footer {
+  padding-top: 100px;
+  background-color: rgba(0, 43, 107, 0.8);
+  text-align: center;
+  color: white;
+  font-family: "DM Sans", sans-serif;
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 18px;
+  }
 }
