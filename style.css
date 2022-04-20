@@ -222,8 +222,9 @@
 }
 @media (min-width: 1200px) {
   .info {
-    min-height: 950px;
-    padding: 70px 0px;
+    min-height: 850px;
+    padding-top: 90px;
+    padding-bottom: 10px;
   }
   .info h1 {
     width: 70%;
