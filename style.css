@@ -13,9 +13,9 @@
 }
 .btn-blue {
   color: white !important;
-  background-color: #154a9d;
+  background-color: #f7941d;
   border: 2px solid white;
-  border-radius: 7px;
+  border-radius: 10px !important;
   font-size: 16px;
   transition: 0.3s;
 }
@@ -25,22 +25,33 @@
   border: 2px solid #154a9d;
 }
 .btn-white {
-  color: #154a9d !important;
-  background-color: white;
+  color: white !important;
+  background-color: #f7941d;
   border-radius: 10px;
   font-size: 16px;
   transition: 0.3s;
 }
 .btn-white:hover {
-  color: white !important;
-  background-color: #154a9d;
+  color: #154a9d !important;
+  background-color: white;
+}
+
+.btn-animation {
+  transition: all 300ms ease-in-out;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  animation: pulsing 2.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+@-webkit-keyframes pulsing {
+  to {
+    box-shadow: 0 0 0 20px rgba(232, 76, 61, 0);
+  }
 }
 .hero {
   font-family: "DM Sans", sans-serif;
   min-height: 750px;
-  background-image: url("assets/img/car-hashmicro.jpg");
+  background-image: url("assets/img/sect1.webp");
   background-position: center;
-  background-size: cover;
+  background-size: 120%;
   position: relative;
 }
 .hero::before {
@@ -74,7 +85,9 @@
   position: relative;
   z-index: 5;
 }
-
+.hero .navbar-brand img {
+  max-height: 30px;
+}
 .btn-blue-circle {
   position: absolute;
   bottom: 1%;
@@ -85,7 +98,33 @@
   height: 25px;
   width: 25px;
   border-radius: 50%;
-  background-color: rgba(25, 82, 168, 0.4);
+  background-color: #154a9d;
+  color: white;
+  overflow: hidden;
+}
+.btn-blue-circle .animation-down {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(5px);
+  animation: down 1s infinite linear 0s;
+}
+@-webkit-keyframes down {
+  0% {
+    transform: translateY(5px);
+  }
+  20% {
+    transform: translateY(20px);
+  }
+  40% {
+    transform: translateY(5px);
+  }
+}
+.btn-blue-circle:hover {
+  background-color: #154a9d;
+  color: white;
 }
 
 @media (min-width: 567px) {
@@ -118,6 +157,7 @@
   background-size: cover;
   background-position: center;
   color: white;
+  padding: 80px 0px;
   font-family: "DM Sans", sans-serif;
 }
 .info::before {
@@ -136,8 +176,8 @@
   z-index: 5;
 }
 .info .image {
-  height: 150px;
-  width: 150px;
+  height: 260px;
+  width: 260px;
   border-radius: 12px;
   background-color: white;
   margin: 0 auto;
@@ -149,10 +189,15 @@
   object-fit: cover;
 }
 .info h1 {
+  font-size: 28px;
   padding-top: 80px;
 }
 .info h2 {
   font-size: 18px;
+  letter-spacing: 0.07em;
+}
+.info p.lead {
+  font-size: 15px;
 }
 @media (min-width: 768px) {
   .info h2 {
@@ -211,11 +256,17 @@
   top: 0;
   height: 27px;
   width: 27px;
-  background-color: #154a9d;
+  background-color: #f7941d;
   border-radius: 50%;
+  z-index: 4;
 }
-.step .step-items {
-  height: 60px;
+.step .step-items.one {
+  height: 80px;
+  color: #154a9d;
+  font-weight: 500;
+}
+.step .step-items:not(.one) {
+  height: 75px;
   font-weight: 500;
   color: #154a9d;
 }
@@ -223,7 +274,7 @@
   margin-top: -6px;
 }
 .step .step-items p.one {
-  margin-top: -5px;
+  margin-top: -7px;
 }
 .step .line-step .garis {
   position: absolute;
@@ -233,6 +284,33 @@
   background-color: #154a9d;
 }
 
+.step h1 img {
+  max-height: 28px;
+}
+.step p.lead {
+  font-size: 15px;
+}
+@media (min-width: 992px) {
+  .step h1 {
+    width: 90%;
+  }
+  .step h1 img {
+    max-height: 40px;
+  }
+  .step p.lead {
+    font-size: 18px;
+  }
+  .step .step-items {
+    height: 60px;
+  }
+  .step .step-items.one {
+    height: 70px;
+  }
+  .step .step-items:not(.one) {
+    height: 65px;
+  }
+}
+
 /* -------------------------------------------------------------------------------------------- */
 .syarat {
   position: relative;
@@ -240,7 +318,18 @@
   color: white;
   font-family: "DM Sans", sans-serif;
 }
-.syarat .image {
+
+@media (min-width: 992px) {
+  .syarat img {
+    max-width: 400px;
+  }
+}
+@media (min-width: 1200px) {
+  .syarat img {
+    max-width: 440px;
+  }
+}
+/* .syarat .image {
   height: 300px;
   width: 200px;
   margin: 0 auto;
@@ -272,7 +361,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
+} */
 
 .syarat .container {
   position: relative;
@@ -290,10 +379,9 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-image: url("assets/img/wave.png");
+  background-image: url("assets/img/sect4bg.webp");
   background-size: cover;
   background-position: center;
-  opacity: 0.1;
 }
 .syarat::before {
   content: "";
@@ -329,6 +417,9 @@
   font-weight: 700;
   font-size: 20px;
 }
+.faq h1 {
+  margin-bottom: 2rem;
+}
 .accordion-button::after {
   background-color: #434343;
   background-image: url("assets/img/chevron-down.png") !important;
@@ -344,7 +435,7 @@
 .join {
   position: relative;
   font-family: "DM Sans", sans-serif;
-  padding: 120px;
+  padding: 20px;
   background-color: white;
 }
 .join::after {
@@ -357,7 +448,32 @@
   border-radius: 0px 0px 40px 40px;
   background-color: white;
 }
-
+.join img {
+  max-width: 280px;
+}
+@media (min-width: 576px) {
+  .join img {
+    max-width: 300px;
+  }
+}
+@media (min-width: 768px) {
+  .join img {
+    max-width: 320px;
+  }
+}
+@media (min-width: 992px) {
+  .join {
+    padding: 120px;
+  }
+  .join img {
+    max-width: 400px;
+  }
+}
+@media (min-width: 1200px) {
+  .join img {
+    max-width: 500px;
+  }
+}
 /* ---------------------------------------------------------------------------------------------------- */
 
 /* footer */
@@ -371,6 +487,29 @@ footer {
 }
 
 @media (min-width: 992px) {
+  h1 {
+    font-size: 38px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 44px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1400px) {
   h1 {
     font-size: 48px;
   }
