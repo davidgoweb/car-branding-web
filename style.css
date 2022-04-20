@@ -232,8 +232,9 @@
   .info p.lead {
     letter-spacing: 0.05em;
     font-weight: 400;
-    margin-top: 30px;
-    margin-bottom: 60px;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 18px;
   }
 }
 /* ------------------------------------------------------------------- */
@@ -326,7 +327,12 @@
 }
 @media (min-width: 1200px) {
   .syarat img {
-    max-width: 440px;
+    max-width: 480px;
+  }
+}
+@media (min-width: 1400px) {
+  .syarat img {
+    max-width: 560px;
   }
 }
 /* .syarat .image {
