@@ -51,10 +51,8 @@
   min-height: 750px;
   background-image: url("assets/img/sect1.webp");
   background-repeat: no-repeat;
-
   background-position: center;
   background-size: cover;
-  /* background-size: 120%; */
   position: relative;
 }
 .hero::before {
@@ -138,6 +136,9 @@
   }
 }
 @media (min-width: 768px) {
+  .hero {
+    background-size: 120%;
+  }
   .btn-blue-circle {
     height: 50px;
     width: 50px;
