@@ -429,7 +429,7 @@
   margin-bottom: 2rem;
 }
 .accordion-button::after {
-  background-color: #434343;
+  background-color: #154b9d;
   background-image: url("assets/img/chevron-down.png") !important;
   background-size: 50%;
   background-position: center;
